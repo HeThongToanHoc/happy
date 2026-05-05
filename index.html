@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hệ thống Học liệu Toán học Toàn diện</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- CẤU HÌNH MATHJAX CHUẨN -->
+    <script>
+        window.MathJax = {
+            tex: { inlineMath: [['$', '$'], ['\\(', '\\)']] },
+            svg: { fontCache: 'global' }
+        };
+    </script>
+    <script type="text/javascript" id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Charis+SIL:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+    
+    <!-- HỖ TRỢ TIKZ TRỰC TIẾP TRÊN WEB BẰNG WEBASSEMBLY -->
+    <link rel="stylesheet" type="text/css" href="https://tikzjax.com/v1/fonts.css">
+<script src="https://tikzjax.com/v1/tikzjax.js"></script>
+    <style>
+        :root {
+            --primary: #2563eb;
+            --dark: #0f172a;
+            --sidebar-bg: #1e293b;
+            --bg: #f8fafc;
+            --text-main: #334155;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Charis SIL', serif; }
+        body { background: var(--bg); display: flex; min-height: 100vh; color: var(--text-main); }
+
+        .sidebar {
+            width: 300px; background: var(--sidebar-bg); color: white;
+            padding: 25px 15px; position: fixed; height: 100vh; overflow-y: auto;
+        }
+
+        .sidebar::-webkit-scrollbar { width: 5px; }
+        .sidebar::-webkit-scrollbar-thumb { background: #334155; border-radius: 10px; }
+
+        .logo { font-size: 20px; font-weight: 800; color: #38bdf8; text-align: center; margin-bottom: 30px; border-bottom: 1px solid #334155; padding-bottom: 15px; }
+        .nav-label { font-size: 11px; text-transform: uppercase; letter-spacing: 1px; color: #94a3b8; margin: 20px 10px 10px; }
+        .nav-item {
+            padding: 12px 15px; margin-bottom: 4px; border-radius: 8px;
+            cursor: pointer; transition: 0.2s; font-size: 14px; display: flex; align-items: center; gap: 10px;
+        }
+        .nav-item:hover, .nav-item.active { background: var(--primary); color: white; }
+
+        .main { margin-left: 300px; flex: 1; padding: 40px; }
+
+        .profile-section {
+            background: white; border-radius: 20px; padding: 30px; margin-bottom: 30px;
+            display: flex; align-items: center; gap: 40px; border: 1px solid #e2e8f0;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1); position: relative; overflow: hidden;
+        }
+        .profile-section::after {
+            content: 'f(x)'; position: absolute; right: -10px; bottom: -20px;
+            font-size: 120px; font-weight: 900; color: #f1f5f9; z-index: 0; font-style: italic;
+        }
+        .profile-img { width: 180px; height: 180px; border-radius: 50%; object-fit: cover; border: 5px solid #dbeafe; z-index: 1; }
+        .profile-info { z-index: 1; flex: 1; }
+        .teacher-name { font-size: 28px; font-weight: 800; color: var(--dark); margin-bottom: 5px; }
+        .teacher-title { color: var(--primary); font-weight: 600; margin-bottom: 15px; display: block; }
+        .qualifications { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 15px; }
+        .q-tag { background: #f1f5f9; padding: 6px 12px; border-radius: 20px; font-size: 13px; font-weight: 500; color: #475569; border: 1px solid #e2e8f0; }
+
+        .header { margin-bottom: 30px; }
+        .grid-container { display: grid; grid-template-columns: 1fr; gap: 20px; }
+        .subject-card { background: white; border-radius: 12px; border: 1px solid #e2e8f0; box-shadow: 0 2px 4px rgba(0,0,0,0.02); overflow: hidden; }
+        .subject-header { padding: 18px 25px; cursor: pointer; display: flex; justify-content: space-between; font-weight: 700; color: var(--primary); }
+        .subject-header:hover { background: #f8fafc; }
+        .pdf-list { display: none; padding: 10px 25px 20px; background: #fafafa; border-top: 1px solid #f1f5f9; }
+        .pdf-list.show { display: block; }
+        .pdf-item { display: flex; justify-content: space-between; align-items: center; padding: 12px 15px; background: white; margin-bottom: 8px; border-radius: 8px; border: 1px solid #f1f5f9; }
+        .btn-view { padding: 8px 14px; color: white; text-decoration: none; border-radius: 6px; font-size: 13px; font-weight: 600; border: none; cursor: pointer; transition: 0.2s; }
+        .btn-view:hover { opacity: 0.9; transform: translateY(-1px); }
+        
+        .modal-overlay { position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.6); z-index:1999; display:none; }
+    </style>
+</head>
+<body>
+
+    <div class="sidebar">
+        <div class="logo">Iris Math</div>
+        <div class="nav-label">Toán Phổ Thông (VN)</div>
+        <div id="nav-vn"></div>
+        <div class="nav-label">Toán Tiếng Anh (International)</div>
+        <div id="nav-en"></div>
+        <div class="nav-label">Toán Đại Học (Higher Math)</div>
+        <div id="nav-uni"></div>
+    </div>
+
+    <div class="main">
+        <div class="profile-section">
+            <img src="avatar.jpg" alt="Teacher Image" class="profile-img" onerror="this.src='https://ui-avatars.com/api/?name=Thuy+Truong&background=random&size=180'">
+            <div class="profile-info">
+                <h2 class="teacher-name">Trương Trần Thu Thủy</h2>
+                <span class="teacher-title">Giáo viên Toán</span>
+                <p style="font-size: 14px; color: #64748b; max-width: 500px;">Hơn 10 năm kinh nghiệm giảng dạy Toán phổ thông và nghiên cứu chương trình STEM.</p>
+                <div class="qualifications">
+                    <span class="q-tag">🎓 Thạc sĩ Toán ứng dụng - HCMUS</span>
+                    <span class="q-tag">📜 Cử nhân Sư phạm Toán học - ĐHSP TPHCM</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="header">
+            <h1 id="view-title">Chào mừng</h1>
+            <p id="view-desc">Vui lòng chọn danh mục để bắt đầu.</p>
+        </div>
+        <div id="content-area" class="grid-container"></div>
+    </div>
+
+    <!-- Lớp phủ cho Modal -->
+    <div class="modal-overlay" id="overlay"></div>
+
+<script>window.quizData = window.quizData || {};</script>
+<script src="de14.js"></script>
+<script src="menu.js"></script>
+
+<script>
+    window.testScores = JSON.parse(localStorage.getItem('irisMathScoresV2')) || {};
+
+    function initSystem() {
+        const renderNav = (category, containerId) => {
+            const container = document.getElementById(containerId);
+            if (!database || !database[category]) return;
+            database[category].forEach(item => {
+                const div = document.createElement('div');
+                div.className = 'nav-item';
+                div.innerHTML = `<span>📂</span> ${item.name}`;
+                div.onclick = () => {
+                    document.querySelectorAll('.nav-item').forEach(nav => nav.classList.remove('active'));
+                    div.classList.add('active');
+                    renderMainContent(item);
+                };
+                container.appendChild(div);
+            });
+        };
+        renderNav('vn', 'nav-vn');
+        renderNav('en', 'nav-en');
+        renderNav('uni', 'nav-uni');
+    }
+
+    function renderMainContent(data) {
+        document.getElementById('view-title').innerText = `Tài liệu: ${data.name}`;
+        document.getElementById('view-desc').innerText = `Hệ thống học liệu chuẩn hóa cho ${data.name}`;
+        const container = document.getElementById('content-area');
+        container.innerHTML = '';
+
+        if (!data.subjects || data.subjects.length === 0) {
+            container.innerHTML = '<p style="text-align:center; padding:20px; color:#94a3b8;">Nội dung đang được cập nhật...</p>';
+            return;
+        }
+
+        const createActionBtn = (item) => {
+            if (item.type === 'pdf' || item.link) {
+                return `<a href="${item.link}" target="_blank" class="btn-view" style="background:#64748b; display:inline-block;">Xem PDF</a>`;
+            }
+            if (item.type === 'full_exam') {
+                return `<button onclick="startFullExam('${item.testId}', '${item.solutionLink}')" class="btn-view" style="background:#2563eb; border:none; cursor:pointer;">Làm Bài Thi</button>`;
+            }
+            return '';
+        };
+
+        data.subjects.forEach(subject => {
+            const card = document.createElement('div');
+            card.className = 'subject-card';
+            let resHTML = '';
+            
+            subject.resources.forEach(res => {
+                if (res.type === 'group') {
+                    let testId = 'unknown';
+                    const examItem = res.items.find(i => i.type === 'full_exam');
+                    if (examItem) testId = examItem.testId;
+
+                    let scoreText = '';
+                    if (typeof window.testScores[testId] === 'number') {
+                        scoreText = `(Điểm cao nhất: ${window.testScores[testId].toFixed(2)} / 10)`;
+                    }
+
+                    let innerItemsHTML = '';
+                    res.items.forEach(innerItem => {
+                        innerItemsHTML += `
+                            <div class="pdf-item" style="border:none; border-bottom:1px solid #f1f5f9; padding-left:30px; border-radius:0;">
+                                <div class="pdf-name" style="color:#475569; font-size:13px;">${innerItem.name}</div>
+                                ${createActionBtn(innerItem)}
+                            </div>`;
+                    });
+                    
+                    resHTML += `
+                        <div style="margin-bottom:10px; border:1px solid #e2e8f0; border-radius:8px; overflow:hidden;">
+                            <div onclick="this.nextElementSibling.classList.toggle('show'); this.querySelector('.inner-icon').style.transform = this.nextElementSibling.classList.contains('show') ? 'rotate(180deg)' : 'rotate(0deg)'" 
+                                 style="padding:12px 15px; background:#f8fafc; cursor:pointer; display:flex; justify-content:space-between; font-weight:600; color:#334155;">
+                                <span>📁 ${res.name} <span id="score-${testId}" style="color:#ef4444; font-weight:800; margin-left:15px; font-size:14px;">${scoreText}</span></span>
+                                <span class="inner-icon" style="transition:0.3s; font-size:12px;">▼</span>
+                            </div>
+                            <div class="pdf-list" style="padding:0; background:white; border-top:1px solid #e2e8f0;">
+                                ${innerItemsHTML}
+                            </div>
+                        </div>`;
+                }
+            });
+
+            card.innerHTML = `
+                <div class="subject-header" onclick="this.nextElementSibling.classList.toggle('show'); this.querySelector('.icon').style.transform = this.nextElementSibling.classList.contains('show') ? 'rotate(180deg)' : 'rotate(0deg)'">
+                    <span>${subject.title}</span><span class="icon" style="transition:0.3s;">▼</span>
+                </div>
+                <div class="pdf-list">${resHTML}</div>`;
+            container.appendChild(card);
+        });
+    }
+
+    window.saveScore = function(testId, score) {
+        if (!window.testScores[testId] || score > window.testScores[testId]) {
+            window.testScores[testId] = score;
+            localStorage.setItem('irisMathScoresV2', JSON.stringify(window.testScores));
+            const scoreSpan = document.getElementById(`score-${testId}`);
+            if (scoreSpan) scoreSpan.innerText = `(Điểm cao nhất: ${score.toFixed(2)} / 10)`;
+        }
+    }
+
+    function startFullExam(testId, solutionLink) {
+        const p1 = window.quizData[testId + '_p1'];
+        const p2 = window.quizData[testId + '_p2'];
+        const p3 = window.quizData[testId + '_p3'];
+
+        if (!p1 || !p2 || !p3) {
+            alert("Dữ liệu đề thi chưa đầy đủ! Hãy kiểm tra lại file dữ liệu.");
+            return;
+        }
+
+        const old = document.getElementById('quiz-modal-container');
+        if(old) old.remove();
+        document.getElementById('overlay').style.display = 'block';
+
+        const modal = document.createElement('div');
+        modal.id = "quiz-modal-container";
+        modal.style = "background:#f8fafc; position:fixed; top:0; left:0; width:100vw; height:100vh; overflow-y:auto; z-index:9999; padding:0; box-sizing:border-box;";
+
+        let html = `
+            <div style="position:sticky; top:0; background:white; z-index:10; display:flex; justify-content:space-between; align-items:center; border-bottom:2px solid #e2e8f0; padding:15px 10%; box-shadow:0 2px 5px rgba(0,0,0,0.05);">
+                <h2 style="color:#2563eb; margin:0; font-size:20px;">Làm Bài Thi Trực Tuyến</h2>
+                <div id="exam-score-display" style="font-weight:700; font-size:18px; color:#ef4444; display:none;"></div>
+                <button onclick="if(confirm('Bạn có chắc muốn thoát?')) { this.parentElement.parentElement.remove(); document.getElementById('overlay').style.display='none'; }" style="cursor:pointer; background:#94a3b8; color:white; border:none; border-radius:8px; padding:8px 15px; font-weight:600;">Thoát</button>
+            </div>
+            <div style="padding: 30px 10%; max-width:1000px; margin:0 auto;">
+        `;
+
+        html += `<h3 style="color:#1e293b; margin-bottom:20px; font-size:18px; border-left:4px solid #2563eb; padding-left:10px;">PHẦN I. Câu trắc nghiệm nhiều phương án lựa chọn</h3>`;
+        p1.forEach((item, index) => {
+            let mediaHTML = '';
+            if (item.image) {
+                mediaHTML = `<div style="margin-bottom: 20px; text-align: center;"><img src="${item.image}" style="max-width: 100%; border-radius: 8px;"></div>`;
+            } else if (item.tikz) {
+                mediaHTML = `<div class="tikz-render-box" data-tikz="${encodeURIComponent(item.tikz)}" style="margin-bottom: 20px; text-align: center; overflow-x: auto; min-height: 100px;"></div>`;
+            }
+
+            html += `
+                <div class="q-block-p1" data-ans="${item.answer}" style="margin-bottom:30px; background:white; padding:20px; border-radius:12px; border:1px solid #e2e8f0; box-shadow: 0 1px 3px rgba(0,0,0,0.02); overflow:hidden;">
+                    <p style="font-weight:700; font-size:16px; margin-bottom:15px;">Câu ${index + 1}: ${item.q}</p>
+                    ${mediaHTML}
+                    <div class="options-p1" style="display:grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap:12px;">`;
+            item.options.forEach((opt, i) => {
+                html += `<button onclick="selectOptP1(this, ${i})" style="padding:12px 15px; border:1px solid #cbd5e1; border-radius:8px; background:white; cursor:pointer; text-align:left; transition:0.2s; font-size:15px; max-width:100%; overflow-x:auto;"><strong style="margin-right:8px; color:#64748b;">${String.fromCharCode(65 + i)}.</strong> ${opt}</button>`;
+            });
+            html += `</div></div>`;
+        });
+
+        html += `<h3 style="color:#1e293b; margin:40px 0 20px 0; font-size:18px; border-left:4px solid #8b5cf6; padding-left:10px;">PHẦN II. Câu trắc nghiệm đúng sai</h3>`;
+        p2.forEach((item, index) => {
+            let mediaHTML = '';
+            if (item.image) {
+                mediaHTML = `<div style="margin-bottom: 20px; text-align: center;"><img src="${item.image}" style="max-width: 100%; border-radius: 8px;"></div>`;
+            } else if (item.tikz) {
+                mediaHTML = `<div class="tikz-render-box" data-tikz="${encodeURIComponent(item.tikz)}" style="margin-bottom: 20px; text-align: center; overflow-x: auto; min-height: 100px;"></div>`;
+            }
+
+            let rowsHTML = '';
+            item.sub_questions.forEach((sub, i) => {
+                rowsHTML += `
+                    <tr class="tf-row" data-correct="${sub.correct}" style="border-bottom: 1px solid #e2e8f0;">
+                        <td style="padding:15px 0; font-size:15px;">${sub.text}</td>
+                        <td class="options-tf" style="width:130px; text-align:right;">
+                            <button onclick="selectTF(this, true)" style="padding:8px 15px; margin-right:5px; cursor:pointer; border-radius:6px; border:2px solid #cbd5e1; background:white; font-weight:600;">Đ</button>
+                            <button onclick="selectTF(this, false)" style="padding:8px 15px; cursor:pointer; border-radius:6px; border:2px solid #cbd5e1; background:white; font-weight:600;">S</button>
+                        </td>
+                    </tr>`;
+            });
+            html += `
+                <div class="q-block-tf" style="margin-bottom:30px; background:white; padding:20px; border-radius:12px; border:1px solid #e2e8f0; box-shadow: 0 1px 3px rgba(0,0,0,0.02); overflow:hidden;">
+                    <p style="font-weight:700; font-size:16px; margin-bottom:15px;">Câu ${index + 1}: ${item.q}</p>
+                    ${mediaHTML}
+                    <div style="overflow-x:auto;">
+                        <table style="width:100%; border-collapse: collapse; min-width:350px;">${rowsHTML}</table>
+                    </div>
+                </div>`;
+        });
+
+        html += `<h3 style="color:#1e293b; margin:40px 0 20px 0; font-size:18px; border-left:4px solid #f59e0b; padding-left:10px;">PHẦN III. Câu trắc nghiệm trả lời ngắn</h3>`;
+        p3.forEach((item, index) => {
+            let mediaHTML = '';
+            if (item.image) {
+                mediaHTML = `<div style="margin-bottom: 20px; text-align: center;"><img src="${item.image}" style="max-width: 100%; border-radius: 8px;"></div>`;
+            } else if (item.tikz) {
+                mediaHTML = `<div class="tikz-render-box" data-tikz="${encodeURIComponent(item.tikz)}" style="margin-bottom: 20px; text-align: center; overflow-x: auto; min-height: 100px;"></div>`;
+            }
+
+            html += `
+                <div class="sa-block" data-ans="${item.answer}" style="margin-bottom:25px; background:white; padding:20px; border-radius:12px; border:1px solid #e2e8f0; box-shadow: 0 1px 3px rgba(0,0,0,0.02); overflow:hidden;">
+                    <p style="font-weight:700; margin-bottom:15px; font-size:16px;">Câu ${index + 1}: ${item.q}</p>
+                    ${mediaHTML}
+                    <div style="display:flex; gap:10px; align-items:center;">
+                        <input type="text" placeholder="Nhập đáp án của bạn..." style="padding:12px 15px; border:1px solid #cbd5e1; border-radius:8px; width:250px; font-size:15px; font-weight:600; outline:none;">
+                    </div>
+                    <div class="sa-feedback" style="margin-top:12px; font-weight:600; min-height:20px; font-size:14px;"></div>
+                </div>`;
+        });
+
+        html += `
+            <div id="submit-section" style="text-align:center; padding: 20px 0 50px 0; border-top:2px dashed #cbd5e1; margin-top:40px;">
+                <button onclick="submitFullExam(this, '${testId}', '${solutionLink}')" style="padding:15px 40px; background:#10b981; color:white; border:none; border-radius:8px; font-weight:700; font-size:18px; cursor:pointer; box-shadow:0 4px 6px rgba(16,185,129,0.3); transition:0.3s;">Nộp Bài & Chấm Điểm</button>
+            </div>
+        </div>`;
+
+        modal.innerHTML = html;
+        document.body.appendChild(modal);
+        if (window.MathJax) MathJax.typesetPromise([modal]);
+
+        // ĐÁNH THỨC TIKZJAX SAU KHI GIAO DIỆN ĐÃ TẠO XONG
+        document.querySelectorAll('.tikz-render-box').forEach(box => {
+            const rawTikz = decodeURIComponent(box.getAttribute('data-tikz'));
+            const scriptNode = document.createElement('script');
+            scriptNode.type = 'text/tikz';
+            scriptNode.text = rawTikz;
+            box.appendChild(scriptNode);
+        });
+    }
+
+    window.selectOptP1 = function(btn, optIndex) {
+        if (btn.parentElement.classList.contains('submitted')) return;
+        const siblings = btn.parentElement.querySelectorAll('button');
+        siblings.forEach(b => { b.style.background = 'white'; b.style.color = '#334155'; b.removeAttribute('data-selected'); });
+        btn.style.background = '#dbeafe'; 
+        btn.setAttribute('data-selected', optIndex);
+    }
+
+    window.selectTF = function(btn, isTrue) {
+        if (btn.parentElement.classList.contains('submitted')) return;
+        const siblings = btn.parentElement.querySelectorAll('button');
+        siblings.forEach(b => { b.style.background = 'white'; b.style.color = '#334155'; b.removeAttribute('data-selected'); });
+        btn.style.background = '#ede9fe'; 
+        btn.setAttribute('data-selected', isTrue);
+    }
+
+    window.submitFullExam = function(btnObj, testId, solutionLink) {
+        if(!confirm('Bạn đã kiểm tra kỹ các đáp án chưa? Xác nhận nộp bài nhé!')) return;
+        
+        let totalScore = 0;
+
+        document.querySelectorAll('.q-block-p1').forEach(block => {
+            const correctAns = parseInt(block.getAttribute('data-ans'));
+            const optionsDiv = block.querySelector('.options-p1');
+            optionsDiv.classList.add('submitted');
+            const buttons = optionsDiv.querySelectorAll('button');
+            
+            let userAns = -1;
+            buttons.forEach((b, i) => {
+                if (b.hasAttribute('data-selected')) userAns = i;
+                if (i === correctAns) {
+                    b.style.background = '#22c55e'; b.style.color = 'white';
+                } else if (b.hasAttribute('data-selected') && i !== correctAns) {
+                    b.style.background = '#ef4444'; b.style.color = 'white';
+                } else {
+                    b.style.opacity = '0.5'; b.style.cursor = 'not-allowed';
+                }
+            });
+            if (userAns === correctAns) totalScore += 0.25;
+        });
+
+        document.querySelectorAll('.q-block-tf').forEach(block => {
+            let correctCount = 0;
+            block.querySelectorAll('.tf-row').forEach(row => {
+                const correctAns = row.getAttribute('data-correct') === 'true';
+                const optionsDiv = row.querySelector('.options-tf');
+                optionsDiv.classList.add('submitted');
+                const buttons = optionsDiv.querySelectorAll('button');
+                
+                let userAns = null;
+                buttons.forEach(b => {
+                    const isTrueBtn = b.innerText === 'Đ';
+                    if (b.hasAttribute('data-selected')) userAns = isTrueBtn;
+                    if (isTrueBtn === correctAns) b.style.borderColor = '#22c55e';
+                    
+                    if (b.hasAttribute('data-selected')) {
+                        if (userAns === correctAns) { b.style.background = '#22c55e'; b.style.color = 'white'; } 
+                        else { b.style.background = '#ef4444'; b.style.color = 'white'; }
+                    } else { b.style.opacity = '0.5'; b.style.cursor = 'not-allowed'; }
+                });
+                if (userAns !== null && userAns === correctAns) correctCount++;
+            });
+            if (correctCount === 1) totalScore += 0.1;
+            else if (correctCount === 2) totalScore += 0.25;
+            else if (correctCount === 3) totalScore += 0.5;
+            else if (correctCount === 4) totalScore += 1.0;
+        });
+
+        document.querySelectorAll('.sa-block').forEach(block => {
+            const input = block.querySelector('input');
+            const feedback = block.querySelector('.sa-feedback');
+            const correctAns = block.getAttribute('data-ans').replace(',', '.');
+            const userAns = input.value.trim().replace(',', '.');
+            
+            input.disabled = true;
+            if (userAns === correctAns && userAns !== "") {
+                totalScore += 0.5;
+                input.style.borderColor = '#22c55e';
+                feedback.innerHTML = "✓ Chính xác! <span style='color:#64748b; font-weight:normal;'>(+0.5đ)</span>"; feedback.style.color = "#22c55e";
+            } else {
+                input.style.borderColor = '#ef4444';
+                feedback.innerHTML = `✗ Sai rồi. Đáp án đúng là: <b>${correctAns}</b>`; feedback.style.color = "#ef4444";
+            }
+        });
+
+        saveScore(testId, totalScore);
+        
+        const topScoreDisplay = document.getElementById('exam-score-display');
+        topScoreDisplay.innerText = `🏆 ĐIỂM: ${totalScore.toFixed(2)} / 10`;
+        topScoreDisplay.style.display = 'block';
+
+        const submitSection = document.getElementById('submit-section');
+        submitSection.innerHTML = `
+            <h2 style="color:#10b981; margin-bottom:20px;">Hoàn thành bài thi! Tổng điểm: ${totalScore.toFixed(2)} / 10</h2>
+            <a href="${solutionLink}" target="_blank" style="display:inline-block; padding:15px 40px; background:#f59e0b; color:white; text-decoration:none; border-radius:8px; font-weight:700; font-size:18px; box-shadow:0 4px 6px rgba(245,158,11,0.3); transition:0.3s;">Xem Lời Giải Chi Tiết</a>
+        `;
+        
+        document.getElementById('quiz-modal-container').scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    window.onload = initSystem;
+</script>
+</body>
+</html>
