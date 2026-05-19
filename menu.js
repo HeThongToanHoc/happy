@@ -473,7 +473,7 @@ const database = {
                             name: 'Đề ôn thi số 16',
                             type: 'group',
                             items: [
-                                { name: 'Làm đề thi trực tuyến (Cấu trúc 2025)', type: 'full_exam', testId: 'on-tn-de-16-2612', solutionLink: '#' }
+                                { name: 'Làm đề thi trực tuyến (Cấu trúc 2025)', type: 'full_exam', testId: 'on-tn-de-16-2612', solutionLink: 'https://drive.google.com/open?id=1ibYiFnaNDKXrY-BdsZLBRBtXaebc2Zr4&usp=drive_fs' }
                             ]
                         },
                         {
