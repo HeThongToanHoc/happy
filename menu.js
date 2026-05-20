@@ -456,6 +456,97 @@ const database = {
                     title: '🎯 Khóa ôn thi tốt nghiệp THPTQG 2026',
                     resources: [
                         {
+                            name: 'Đề ôn thi số 1',
+                            type: 'group',
+                            items: [
+                                { name: 'Làm đề thi trực tuyến (Cấu trúc 2025)', type: 'full_exam', testId: 'on-tn-de-1-2612', solutionLink: 'https://drive.google.com/open?id=14_gJKo7IQtE7Lhxs_820ew6iktfNQSbc&usp=drive_fs' }
+                            ]
+                        },
+                        {
+                            name: 'Đề ôn thi số 2',
+                            type: 'group',
+                            items: [
+                                { name: 'Làm đề thi trực tuyến (Cấu trúc 2025)', type: 'full_exam', testId: 'on-tn-de-2-2612', solutionLink: 'https://drive.google.com/open?id=126XeuPnjJjUXSLirswuLdztnywFw6zL9&usp=drive_fs' }
+                            ]
+                        },
+                        {
+                            name: 'Đề ôn thi số 3',
+                            type: 'group',
+                            items: [
+                                { name: 'Làm đề thi trực tuyến (Cấu trúc 2025)', type: 'full_exam', testId: 'on-tn-de-3-2612', solutionLink: 'https://drive.google.com/open?id=1wbRgHB_N3UnTXJSK6vMOHBTRV4OfMERL&usp=drive_fs' }
+                            ]
+                        },
+                        {
+                            name: 'Đề ôn thi số 4',
+                            type: 'group',
+                            items: [
+                                { name: 'Làm đề thi trực tuyến (Cấu trúc 2025)', type: 'full_exam', testId: 'on-tn-de-4-2612', solutionLink: 'https://drive.google.com/open?id=1e-wqkKh12VaiBBkgf-LD8kU2Gg6haoWR&usp=drive_fs' }
+                            ]
+                        },
+                        {
+                            name: 'Đề ôn thi số 5',
+                            type: 'group',
+                            items: [
+                                { name: 'Làm đề thi trực tuyến (Cấu trúc 2025)', type: 'full_exam', testId: 'on-tn-de-5-2612', solutionLink: 'https://drive.google.com/open?id=1doW966UwFUw8u-wkQ1a8kmFrGetoszPL&usp=drive_fs' }
+                            ]
+                        },
+                        {
+                            name: 'Đề ôn thi số 6',
+                            type: 'group',
+                            items: [
+                                { name: 'Làm đề thi trực tuyến (Cấu trúc 2025)', type: 'full_exam', testId: 'on-tn-de-6-2612', solutionLink: 'https://drive.google.com/open?id=1J_DWtLPnjlXIBhcNmQnANAg_j_GhpIgn&usp=drive_fs' }
+                            ]
+                        },
+                        {
+                            name: 'Đề ôn thi số 7',
+                            type: 'group',
+                            items: [
+                                { name: 'Làm đề thi trực tuyến (Cấu trúc 2025)', type: 'full_exam', testId: 'on-tn-de-7-2612', solutionLink: 'https://drive.google.com/open?id=16PQBeiiyCXJ3yLlZ4d34T2-5LhlZlwgx&usp=drive_fs' }
+                            ]
+                        },
+                        {
+                            name: 'Đề ôn thi số 8',
+                            type: 'group',
+                            items: [
+                                { name: 'Làm đề thi trực tuyến (Cấu trúc 2025)', type: 'full_exam', testId: 'on-tn-de-8-2612', solutionLink: 'https://drive.google.com/open?id=1gNQKJD6kaLEfkcxuovCWqzfRjLcU2zIG&usp=drive_fs' }
+                            ]
+                        },
+                        {
+                            name: 'Đề ôn thi số 9',
+                            type: 'group',
+                            items: [
+                                { name: 'Làm đề thi trực tuyến (Cấu trúc 2025)', type: 'full_exam', testId: 'on-tn-de-9-2612', solutionLink: 'https://drive.google.com/open?id=1ZBIKQtB2buluTbSWdt95YRc8kkrRZ-vf&usp=drive_fs' }
+                            ]
+                        },
+                        {
+                            name: 'Đề ôn thi số 10',
+                            type: 'group',
+                            items: [
+                                { name: 'Làm đề thi trực tuyến (Cấu trúc 2025)', type: 'full_exam', testId: 'on-tn-de-10-2612', solutionLink: 'https://drive.google.com/open?id=1cbLDYkBHZqlD5VcCkWU8D3J38TriT-Ke&usp=drive_fs' }
+                            ]
+                        },
+                        {
+                            name: 'Đề ôn thi số 11',
+                            type: 'group',
+                            items: [
+                                { name: 'Làm đề thi trực tuyến (Cấu trúc 2025)', type: 'full_exam', testId: 'on-tn-de-11-2612', solutionLink: 'https://drive.google.com/open?id=1TqxYf7AiNGjP09NYIA_FGYf_klSOpbKx&usp=drive_fs' }
+                            ]
+                        },
+                        {
+                            name: 'Đề ôn thi số 12',
+                            type: 'group',
+                            items: [
+                                { name: 'Làm đề thi trực tuyến (Cấu trúc 2025)', type: 'full_exam', testId: 'on-tn-de-12-2612', solutionLink: 'https://drive.google.com/open?id=1iDG2qTELA05xUu9Gp3epC8HWMikZc9mk&usp=drive_fs' }
+                            ]
+                        },
+                        {
+                            name: 'Đề ôn thi số 13',
+                            type: 'group',
+                            items: [
+                                { name: 'Làm đề thi trực tuyến (Cấu trúc 2025)', type: 'full_exam', testId: 'on-tn-de-13-2612', solutionLink: 'https://drive.google.com/open?id=1qUfDDoBQPfSBwNLdYQJpqYxlmJWwrIvI&usp=drive_fs' }
+                            ]
+                        },
+                        {
                             name: 'Đề ôn thi số 14',
                             type: 'group',
                             items: [
