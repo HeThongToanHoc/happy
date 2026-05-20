@@ -80,7 +80,7 @@ window.quizData['on-tn-de-2-2612_p1'] = [
         explanation: "Ta có $\\log _3(x+1)=2\\Leftrightarrow x+1=3^2\\Leftrightarrow x=8$."
     },
     {
-        q: "Trong không gian với hệ trục toạ độ $Oxyz$, mặt phẳng $(P)\\colon \\dfrac{x}{2}+\dfrac{y}{3}+\dfrac{z}{-2}=1$ có một véc-tơ pháp tuyến là",
+        q: "Trong không gian với hệ trục toạ độ $Oxyz$, mặt phẳng $(P)\\colon \\dfrac{x}{2}+\\dfrac{y}{3}+\\dfrac{z}{-2}=1$ có một véc-tơ pháp tuyến là",
         options: [
             "$\\overrightarrow{n}=(2;3;2)$",
             "$\\overrightarrow{n}=(3;2;3)$",
