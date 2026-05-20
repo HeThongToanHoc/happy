@@ -183,36 +183,6 @@ window.quizData['on-tn-de-1-2612_p2'] = [
 
 window.quizData['on-tn-de-1-2612_p3'] = [
     {
-        q: "Khi nghiên cứu dịch sốt xuất huyết ở một địa phương, các chuyên gia y tế ước tính rằng tại ngày thứ $m$ có $F(m)$ người mắc bệnh. Biết rằng tốc độ lan truyền bệnh là $F'(m)=\\dfrac{150}{2m+1}$ và ngày đầu tiên ($m=0$) phát hiện ra 50 bệnh nhân. Số người mắc bệnh ở ngày thứ 10 (làm tròn đến hàng đơn vị) là:",
-        answer: "278",
-        explanation: "Ta có $F(m) = \\int F'(m) \\text{d}m = \\int \\dfrac{150}{2m+1} \\text{d}m = 75 \\ln|2m+1| + C$.\\nVì ngày đầu tiên ($m=0$) có 50 bệnh nhân nên $F(0) = 75 \\ln(1) + C = 50 \\Rightarrow C = 50$.\\nSuy ra hàm số là $F(m) = 75 \\ln(2m+1) + 50$.\\nSố người mắc bệnh ở ngày thứ 10 là $F(10) = 75 \\ln(21) + 50 \\approx 278,34$. Làm tròn đến hàng đơn vị ta được 278."
-    },
-    {
-        q: "Một vật dao động điều hòa xung quanh vị trí cân bằng theo phương trình $x=2 \\cos \\left(5 t-\\dfrac{\\pi}{6}\\right)$ ($t$ tính bằng giây, $x$ tính bằng cm). Trong khoảng thời gian từ 0 đến 6 giây, vật đi qua vị trí cân bằng bao nhiêu lần?",
-        answer: "9",
-        explanation: "Vật đi qua vị trí cân bằng khi $x = 0 \\Leftrightarrow 5t - \\dfrac{\\pi}{6} = \\dfrac{\\pi}{2} + k\\pi \\Leftrightarrow 5t = \\dfrac{2\\pi}{3} + k\\pi \\Leftrightarrow t = \\dfrac{2\\pi}{15} + \\dfrac{k\\pi}{5}$ ($k \\in \\mathbb{Z}$).\\nVì $t \\in [0; 6]$ nên $0 \\leq \\dfrac{2\\pi}{15} + \\dfrac{k\\pi}{5} \\leq 6 \\Leftrightarrow -\\dfrac{2}{3} \\leq k \\leq \\dfrac{30}{\\pi} - \\dfrac{2}{3} \\approx 8,88$.\\nDo $k \\in \\mathbb{Z}$ nên $k \\in \\{0; 1; 2; 3; 4; 5; 6; 7; 8\\}. Có tất cả 9 giá trị của $k$, tương ứng vật đi qua vị trí cân bằng 9 lần."
-    },
-    {
-        q: "Một phần đường chạy của tàu lượn siêu tốc khi gắn với hệ trục tọa độ $Oxy$ được mô phỏng ở hình sau. Biết đường chạy của nó có dạng đồ thị hàm số bậc ba $y=ax^3+bx^2+cx+d$ ($0 \\leq x \\leq 90$). Tàu lượn xuất phát từ điểm $A$ đồng thời đi qua các điểm $B$, $C$, $D$. Hãy tính độ cao lớn nhất mà tàu lượn siêu tốc đạt được so với mặt đất (mét, làm tròn đến hàng phần chục).",
-        answer: "39.9",
-        explanation: "Từ đồ thị và dữ kiện các điểm tàu đi qua (giả sử các điểm có tọa độ xác định từ bài toán gốc để giải hệ phương trình tìm $a, b, c, d$), ta tìm được hàm số bậc ba cụ thể.\\nSau đó, tính đạo hàm $y'$, tìm nghiệm cực đại $x_0$ thuộc $[0; 90]$. Giá trị cực đại $y(x_0)$ chính là độ cao lớn nhất của tàu lượn đạt được, xấp xỉ bằng 39.9 m."
-    },
-    {
-        q: "Từ một hình vuông có cạnh 8 dm, bạn Xuân Anh vẽ một đường tròn chính giữa với tâm trùng tâm hình vuông. Sau đó vẽ hai parabol đối xứng qua tâm đường tròn, tiếp xúc đường tròn và đi qua cặp đỉnh hình vuông; cuối cùng vẽ thêm hai hình chữ nhật đối xứng qua tâm. Tìm diện tích lớn nhất của phần tô đậm (làm tròn đến hàng phần mười của $\\mathrm{dm}^2$).",
-        answer: "54.2",
-        explanation: "Thiết lập hệ trục tọa độ với gốc $O$ là tâm hình vuông. Xác định phương trình đường tròn $x^2+y^2=R^2$ và phương trình các parabol dựa vào tọa độ đỉnh hình vuông và điều kiện tiếp xúc đường tròn.\\nSử dụng tích phân để tính diện tích hình phẳng giới hạn bởi các đường cong này. Kết quả diện tích phần tô đậm lớn nhất sau khi tính toán và làm tròn đạt 54.2 $\\text{dm}^2$."
-    },
-    {
-        q: "Trong hộp bài hiện tại có 2 bộ bài trộn lẫn: bộ bài loại $X$ gồm toàn các lá bài đỏ và bộ bài loại $Y$ có tỉ lệ lá bài đỏ là 0,5. Người chơi chọn ngẫu nhiên một bộ bài rồi rút ra 1 lá bài từ bộ đó. Biết rằng người chơi đã rút được một lá bài đỏ, tính xác suất để lá bài đó được rút ra từ bộ bài loại $X$. (Kết quả làm tròn đến hàng phần trăm).",
-        answer: "0.67",
-        explanation: "Gọi $A$ là biến cố 'Rút được lá bài đỏ', $B_1$ là biến cố 'Chọn được bộ bài $X$', $B_2$ là biến cố 'Chọn được bộ bài $Y$'.\\nTa có $\\mathrm{P}(B_1) = \\mathrm{P}(B_2) = 0,5$; $\\mathrm{P}(A|B_1) = 1$ (vì bộ $X$ toàn bài đỏ); $\\mathrm{P}(A|B_2) = 0,5$.\\nTheo công thức xác suất toàn phần: $\\mathrm{P}(A) = \\mathrm{P}(B_1)\\cdot\\mathrm{P}(A|B_1) + \\mathrm{P}(B_2)\\cdot\\mathrm{P}(A|B_2) = 0,5 \\cdot 1 + 0,5 \\cdot 0,5 = 0,75$.\\nÁp dụng công thức Bayes, xác suất lá bài đỏ đó thuộc bộ $X$ là: $\\mathrm{P}(B_1|A) = \\dfrac{\\mathrm{P}(B_1)\\cdot\\mathrm{P}(A|B_1)}{\\mathrm{P}(A)} = \\dfrac{0,5 \\cdot 1}{0,75} = \\dfrac{2}{3} \\approx 0,67$."
-    },
-    {
-        q: "Một cái cốc đựng nước với phần lồng cốc có dạng hình nón cụt, bán kính đáy bé và lớn lần lượt là $2,5 \\mathrm{~cm}; 3 \\mathrm{~cm}$. Khi bỏ 4 viên bi cùng bán kính 1 cm tiếp xúc đôi một (3 viên ở đáy, viên còn lại nằm trên) thì mực nước ngập đến $\\dfrac{3}{4}$ chiều cao viên bi trên cùng. Biết viên bi trên cùng vừa chạm miệng cốc, hỏi thể tích nước trong ly là bao nhiêu ml (làm tròn đến hàng phần chục)?",
-        answer: "56.6",
-        explanation: "Tính chiều cao hình nón cụt dựa trên hình học không gian của 4 viên bi tiếp xúc nhau (3 viên dưới đáy, 1 viên trên cùng chạm miệng cốc). Từ đó tính được thể tích khối nón cụt chứa nước ban đầu.\\nThể tích nước trong ly bằng thể tích hình nón cụt tính từ đáy đến mực nước hiện tại trừ đi phần thể tích chiếm chỗ của các viên bi ngập trong nước (3 viên bi dưới ngập hoàn toàn, 1 viên bi trên ngập $\\dfrac{3}{4}$). Kết quả tính toán cho ra xấp xỉ 56.6 ml."
-    },
-    {
         q: "Người ta xây dựng một chân tháp bằng bê tông có dạng khối chóp cụt tháp cụt tứ giác đều. Cạnh đáy dưới dài 5 m, cạnh đáy trên dài 2 m, cạnh bên dài 3 m. Tính thể tích chân tháp (làm tròn kết quả đến hàng phần mười).",
         image: "images/2612OnTNDe1/2612OnTNDe1TLN1.png",
         answer: "27.6",
