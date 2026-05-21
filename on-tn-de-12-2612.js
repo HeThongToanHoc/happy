@@ -141,14 +141,13 @@ window.quizData['on-tn-de-12-2612_p1'] = [
 
 window.quizData['on-tn-de-12-2612_p2'] = [
     {
-        q: "Cho hàm số $y=f(x)$ liên tục trên $\\mathbb{R}$ và có bảng biến thiên. Xét tính đúng sai của các khẳng định sau:",
+        q: "Một công ty giao hàng nhanh trong thành phố đã xây dựng một thuật toán giao hàng tối ưu. Để kiểm chứng, giám đốc yêu cầu ghi nhận thời gian giao của từng đơn hàng trong mẫu 100 đơn chạy thử. Số liệu được thống kê trong bảng sau:<br><br><table border=\"1\" style=\"border-collapse: collapse; text-align: center;\"><tr><td>Thời gian (phút)</td><td>$[10; 20)$</td><td>$[20; 30)$</td><td>$[30; 40)$</td><td>$[40; 50)$</td><td>$[50; 60]$</td></tr><tr><td>Số đơn</td><td>15</td><td>40</td><td>25</td><td>12</td><td>8</td></tr></table>",
         sub_questions: [
-            { text: "Đồ thị hàm số đã cho có hai đường tiệm cận ngang", correct: true },
-            { text: "Giá trị nhỏ nhất của hàm số trên $(-\\infty ;+\\infty)$ bằng 8", correct: true },
-            { text: "Hàm số đồng biến trên khoảng $(8 ; 38)$", correct: false },
-            { text: "Giá trị lớn nhất của hàm số trên $\\mathbb{R}$ bằng 142", correct: false }
-        ],
-        explanation: "- Mệnh đề 1 ĐÚNG vì có giới hạn cực biên: $\\lim\\limits_{x \\to-\\infty} f(x)=142 \\Rightarrow y=142$ là một tiệm cận ngang, và $\\lim\\limits_{x \\to+\\infty} f(x)=14 \\Rightarrow y=14$ là tiệm cận ngang thứ hai.\\n- Mệnh đề 2 ĐÚNG vì dựa vào bảng biến thiên, điểm cực tiểu $f(-1)=8$ cũng chính là giá trị thấp nhất của hàm số trên $\\mathbb{R}$.\\n- Mệnh đề 3 SAI vì hàm số chỉ đồng biến trên miền tạo bởi khoảng nghiệm đạo hàm dương là $(-1; 1)$. Khoảng dữ liệu $(8;38)$ không nằm trong miền này.\\n- Mệnh đề 4 SAI vì $\\lim\\limits_{x \\to-\\infty} f(x)=142$ nhưng đồ thị chỉ tiến sát đến chứ không chạm vào, đồng thời giá trị hàm số luôn nhỏ hơn 142 nên hàm số không tồn tại GTLN trên $\\mathbb{R}$."
+            { text: "a) Độ phân tán của thời gian giao hàng, ước lượng bằng khoảng biến thiên mẫu số liệu, là 50 phút.", correct: true },
+            { text: "b) Một nửa số đơn hàng (trung vị ước lượng của mẫu số liệu) được giao xong không quá 28 phút 45 giây.", correct: true },
+            { text: "c) Thời gian giao hàng phổ biến nhất (giá trị mốt của mẫu số liệu tính theo công thức) bằng 25 phút.", correct: false },
+            { text: "d) Công ty có chính sách niêm yết phí ship 20000 đồng cho mỗi đơn. Cam kết nếu giao từ 40 phút trở lên, khách hàng không phải trả phí ship và nhận thêm 60000 đồng tiền bồi thường từ công ty. Sau đợt chạy thử 100 đơn này, tổng tiền phí ship thu được vẫn lớn hơn tổng số tiền bồi thường công ty phải chi trả.", correct: true }
+        ]
     },
     {
         q: "Trong một thử nghiệm ô tô xuất phát từ trạng thái nghỉ. Người lái điều khiển xe đạt vận tốc cực đại tại $t = 18$ giây, rồi giảm tốc và dừng hẳn. Toàn bộ quá trình kéo dài 50 giây. Đồ thị vận tốc $v(t)$ (m/s) theo thời gian $t$ (s) như hình vẽ. Giai đoạn 1 là $[0;24]$ có đồ thị parabol đỉnh $I(18;27)$ qua $O$; giai đoạn 2 là $(24;50]$ có đồ thị là đoạn thẳng $AB$ với $A(24;24)$ và $B(50;0)$. Xét tính đúng sai:",
@@ -208,7 +207,6 @@ window.quizData['on-tn-de-12-2612_p3'] = [
     },
     {
         q: "Một nhà máy sản xuất drone phun thuốc tự động có công suất tối đa 350 chiếc/quý. Doanh nghiệp cần xác định số lượng $x$ chiếc drone sản xuất trong quý ($x \\in \\mathbb{N}^*$) dựa theo các thông số: Giá bán mỗi chiếc tuân theo hàm cầu $P(x)=120-0{,}2x$ (triệu đồng); Chi phí vận hành cố định là 1.000 triệu đồng; Chi phí linh kiện gốc là 50 triệu đồng/chiếc, nhưng nếu quy mô lô hàng vượt trên 100 chiếc thì được giảm giá gốc linh kiện toàn bộ xuống còn 40 triệu đồng/chiếc. Hãy tính lợi nhuận thu được sau thuế lớn nhất của nhà máy là bao nhiêu triệu đồng? (Biết mức thuế suất là 10% tính trên lợi nhuận dương thu được).",
-        image: "images/2612OnTNDe12/2612OnTNDe12TLN5.png",
         answer: "6300",
         explanation: "Hàm tính toán tổng doanh thu của nhà máy: $R(x) = x \\cdot P(x) = 120x - 0,2x^2$.\\n- TH1: Quy mô nhỏ $0 < x \\le 100$. Chi phí $C_1(x) = 1000 + 50x \\Rightarrow$ lợi nhuận trước thuế $T_1(x) = -0,2x^2+70x-1000$. Hàm số bậc hai đồng biến trên nửa khoảng này nên đạt cực đại tại biên $x=100 \\Rightarrow T_{1\\max} = 4000$ triệu đồng.\\n- TH2: Quy mô lớn $100 < x \\le 350$. Chi phí ưu đãi $C_2(x) = 1000 + 40x \\Rightarrow$ lợi nhuận trước thuế $T_2(x) = -0,2x^2+80x-1000$. Hàm đạt cực đại tại đỉnh parabol $x = 200$ (thỏa mãn) $\\Rightarrow T_{2\\max} = -0,2(200^2)+80(200)-1000 = 7000$ triệu đồng.\\nSo sánh thấy lợi nhuận lớn nhất trước thuế đạt 7000 triệu đồng. Sau khi khấu trừ 10% tiền thuế, lợi nhuận ròng sau thuế lớn nhất thu được thực tế là: $7000 \\cdot (1 - 0,1) = 6300$ triệu đồng."
     },
