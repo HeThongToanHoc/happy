@@ -592,7 +592,7 @@ const database = {
                             name: 'Đề ôn thi số 20',
                             type: 'group',
                             items: [
-                                { name: 'Làm đề thi trực tuyến (Cấu trúc 2025)', type: 'full_exam', testId: 'd20', solutionLink: '#' }
+                                { name: 'Làm đề thi trực tuyến (Cấu trúc 2025)', type: 'full_exam', testId: 'on-tn-de-20-2612', solutionLink: 'https://drive.google.com/open?id=1sfISn7kCIiNhnLTbP6Ex_49fD_Iz99OL&usp=drive_fs' }
                             ]
                         }
                     ]
