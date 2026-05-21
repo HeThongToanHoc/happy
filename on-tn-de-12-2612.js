@@ -143,10 +143,10 @@ window.quizData['on-tn-de-12-2612_p2'] = [
     {
         q: "Một công ty giao hàng nhanh trong thành phố đã xây dựng một thuật toán giao hàng tối ưu. Để kiểm chứng, giám đốc yêu cầu ghi nhận thời gian giao của từng đơn hàng trong mẫu 100 đơn chạy thử. Số liệu được thống kê trong bảng sau:<br><br><table border=\"1\" style=\"border-collapse: collapse; text-align: center;\"><tr><td>Thời gian (phút)</td><td>$[10; 20)$</td><td>$[20; 30)$</td><td>$[30; 40)$</td><td>$[40; 50)$</td><td>$[50; 60]$</td></tr><tr><td>Số đơn</td><td>15</td><td>40</td><td>25</td><td>12</td><td>8</td></tr></table>",
         sub_questions: [
-            { text: "a) Độ phân tán của thời gian giao hàng, ước lượng bằng khoảng biến thiên mẫu số liệu, là 50 phút.", correct: true },
-            { text: "b) Một nửa số đơn hàng (trung vị ước lượng của mẫu số liệu) được giao xong không quá 28 phút 45 giây.", correct: true },
-            { text: "c) Thời gian giao hàng phổ biến nhất (giá trị mốt của mẫu số liệu tính theo công thức) bằng 25 phút.", correct: false },
-            { text: "d) Công ty có chính sách niêm yết phí ship 20000 đồng cho mỗi đơn. Cam kết nếu giao từ 40 phút trở lên, khách hàng không phải trả phí ship và nhận thêm 60000 đồng tiền bồi thường từ công ty. Sau đợt chạy thử 100 đơn này, tổng tiền phí ship thu được vẫn lớn hơn tổng số tiền bồi thường công ty phải chi trả.", correct: true }
+            { text: "Độ phân tán của thời gian giao hàng, ước lượng bằng khoảng biến thiên mẫu số liệu, là 50 phút.", correct: true },
+            { text: "Một nửa số đơn hàng (trung vị ước lượng của mẫu số liệu) được giao xong không quá 28 phút 45 giây.", correct: true },
+            { text: "Thời gian giao hàng phổ biến nhất (giá trị mốt của mẫu số liệu tính theo công thức) bằng 25 phút.", correct: false },
+            { text: "Công ty có chính sách niêm yết phí ship 20000 đồng cho mỗi đơn. Cam kết nếu giao từ 40 phút trở lên, khách hàng không phải trả phí ship và nhận thêm 60000 đồng tiền bồi thường từ công ty. Sau đợt chạy thử 100 đơn này, tổng tiền phí ship thu được vẫn lớn hơn tổng số tiền bồi thường công ty phải chi trả.", correct: true }
         ]
     },
     {

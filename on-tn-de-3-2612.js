@@ -14,6 +14,16 @@ window.quizData['on-tn-de-3-2612_p1'] = [
         explanation: "Ta có $\\displaystyle\\int \\dfrac{1}{\\sin^2 x} dx = F(x) + C \\Rightarrow F'(x) = \\left( \\displaystyle\\int \\dfrac{1}{\\sin^2 x} dx \\right)' = \\dfrac{1}{\\sin^2 x}$."
     },
     {
+        q: "Cho hình phẳng $(H)$ giới hạn bởi đồ thị $(P) : y = 2x - x^2$ và trục $Ox$. Tính thể tích $V$ của khối tròn xoay tạo thành khi cho $(H)$ quay quanh trục $Ox$.",
+        options: [
+            "$V = \\dfrac{19\\pi}{15}$.",
+            "$V = \\dfrac{13\\pi}{15}$.",
+            "$V = \\dfrac{17\\pi}{15}$.",
+            "$V = \\dfrac{16\\pi}{15}$."
+        ],
+        answer: 3
+    },
+    {
         q: "Bạn An rất thích chạy bộ. Thời gian chạy bộ mỗi ngày của bạn An được thống kê lại ở bảng sau: <br><table border='1' style='border-collapse:collapse; text-align:center; width:100%; max-width:500px; margin:10px auto;'><tr><td>Thời gian (phút)</td><td>$[20;25)$</td><td>$[25;30)$</td><td>$[30;35)$</td><td>$[35;40)$</td><td>$[40;45)$</td></tr><tr><td>Số ngày</td><td>6</td><td>6</td><td>4</td><td>1</td><td>1</td></tr></table> Hãy tính khoảng tứ phân vị của mẫu số liệu ghép nhóm trong bảng trên.",
         options: [
             "$9{,}225$",
@@ -37,7 +47,7 @@ window.quizData['on-tn-de-3-2612_p1'] = [
     },
     {
         q: "Cho hàm số bậc ba $y=f(x)$ có đồ thị như hình vẽ. Số đường tiệm cận đứng của đồ thị hàm số $g(x) = \\dfrac{2025}{f(x)}$ là:",
-        image: "images/2612OnTNDe3/2612OnTNDe3TN4.png",
+        image: "images/2612OnTNDe3/2612OnTNDe3TN5.png",
         options: [
             "3",
             "1",
@@ -56,29 +66,17 @@ window.quizData['on-tn-de-3-2612_p1'] = [
             "$\\left[-4;-3\\right] \\cup \\left[0;1\\right]$"
         ],
         answer: 2,
-        explanation: "$\\log_2(x^2+3x) \\le 2 \\Leftrightarrow 0 < x^2+3x \\le 4 \\Leftrightarrow \\left\\{ \\begin{array}{l} x^2+3x > 0 \\\\ x^2+3x-4 \\le 0 \\end{array} \\right. \\Leftrightarrow \\left[ \\begin{array}{l} -4 \\le x < -3 \\\\ 0 < x \\le 1 \\end{array} \\right.$."
+        explanation: "$\\log_2(x^2+3x) \\le 2 \\Leftrightarrow 0 < x^2+3x \\le 4 \\Leftrightarrow \\left\\{ \\begin{array}{l} x^2+3x > 0 \\ x^2+3x-4 \\le 0 \\end{array} \\right. \\Leftrightarrow \\left[ \\begin{array}{l} -4 \\le x < -3 \\\\ 0 < x \\le 1 \\end{array} \\right.$."
     },
     {
-        q: "Cho phương trình $\\tan(2x-15^\\circ)=1$ biết rằng $-90^\\circ<x<90^\\circ$. Số nghiệm của phương trình là",
+        q: "Trong không gian $Oxyz$, một vectơ pháp tuyến của mặt phẳng $(P) : \\dfrac{x}{2} + \\dfrac{y}{3} - \\dfrac{z}{2} = 1$ là:",
         options: [
-            "1",
-            "2",
-            "3",
-            "4"
+            "$\\vec{n} = (1; 1; -1)$.",
+            "$\\vec{n} = (2; 3; -2)$.",
+            "$\\vec{n} = (2; 3; 2)$.",
+            "$\\vec{n} = (3; 2; -3)$."
         ],
-        answer: 1,
-        explanation: "$\\tan(2x-15^\\circ)=1 \\Rightarrow 2x-15^\\circ=45^\\circ+k\\cdot180^\\circ \\Rightarrow x=30^\\circ+k\\cdot90^\\circ$.\\nVới $-90^\\circ<x<90^\\circ$: $k=-1 \\Rightarrow x=-60^\\circ$; $k=0 \\Rightarrow x=30^\\circ$ (thu được 2 nghiệm)."
-    },
-    {
-        q: "Trong không gian với hệ toạ độ $Oxyz$, cho mặt cầu $(S) \\colon x^2+y^2+z^2-2x+2y-4z-2=0$. Tính bán kính $r$ của mặt cầu.",
-        options: [
-            "$r=2\\sqrt{2}$",
-            "$r=\\sqrt{2}$",
-            "$r=4$",
-            "$r=\\sqrt{26}$"
-        ],
-        answer: 0,
-        explanation: "Mặt cầu $(S) \\colon x^2+y^2+z^2-2x+2y-4z-2=0$ có tâm $I(1;-1;2)$ nên bán kính $r=\\sqrt{1^2+(-1)^2+2^2-(-2)}=2\\sqrt{2}$."
+        answer: 3
     },
     {
         q: "Cho hình chóp $S.ABC$ có đáy $ABC$ vuông tại $A$, cạnh bên $SA \\perp (ABC)$. Gọi $I$ là trung điểm cạnh $AC$, $H$ là hình chiếu của $I$ trên $SC$. Khẳng định nào sau đây đúng?",
@@ -106,7 +104,7 @@ window.quizData['on-tn-de-3-2612_p1'] = [
         q: "Cho 3 số hạng đầu của một cấp số nhân có tổng bằng 13, đồng thời chúng lần lượt là số hạng thứ nhất, thứ ba và thứ chín của một cấp số cộng. Công bội của cấp số nhân là:",
         options: [
             "$q \\in \\{-1; 0\\}$",
-            "$q \\in \{0; 1\\}$",
+            "$q \\in \\{0; 1\\}$",
             "$q \\in \\{1; 3\\}$",
             "$q \\in \\{-1; -3\\}$"
         ],
