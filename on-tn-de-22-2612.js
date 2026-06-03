@@ -5,7 +5,7 @@ window.quizData = window.quizData || {};
 window.quizData['on-tn-de-22-2612_p1'] = [
     {
         q: "Cho hàm số $y=\\dfrac{ax+b}{cx+d}$ $(ac \\neq 0, ad-bc \\neq 0)$ có đồ thị như hình vẽ bên. Trong các hệ số $a$, $b$, $c$, $d$ có bao nhiêu số dương?",
-        image: "Toan/12/images/2612OnTNDe22/2612OnTNDe22TN1.png",
+        image: "images/2612OnTNDe22/2612OnTNDe22TN1.png",
         options: ["$2$", "$1$", "$3$", "$0$"],
         answer: 0
     },
@@ -79,7 +79,7 @@ window.quizData['on-tn-de-22-2612_p2'] = [
     },
     {
         q: "Phần gạch sọc trong hình bên dưới là hình phẳng $(H)$ được giới hạn bởi $\\dfrac{1}{4}$ cung tròn của đường tròn tâm $O(0;0)$, bán kính bằng $4$; parabol $(P) \\colon y = f(x)$ có tọa độ đỉnh $I(2;2)$, đi qua gốc tọa độ $O$; và hai đường thẳng $x = 0$; $x = 4$.",
-        image: "Toan/12/images/2612OnTNDe22/2612OnTNDe22DS2.png",
+        image: "images/2612OnTNDe22/2612OnTNDe22DS2.png",
         sub_questions: [
             { text: "a) Gọi $F(x)$ là một nguyên hàm của hàm số $f(x)$ trên $[0;4]$. Khi đó $\\displaystyle\\int\\limits_0^4 f(x) \\mathrm{\\,d}x = F(x) \\Big|_0^4$", correct: true },
             { text: "b) Diện tích hình phẳng giới hạn bởi $\\dfrac{1}{4}$ cung tròn của đường tròn tâm $O(0;0)$, bán kính bằng $4$ là $\\displaystyle\\int\\limits_0^4 \\sqrt{4^2 - x^2} \\mathrm{\\,d}x = 4\\pi$", correct: true },
@@ -98,7 +98,7 @@ window.quizData['on-tn-de-22-2612_p2'] = [
     },
     {
         q: "Một vật trang trí có dạng hình chóp tam giác đều $S.ABC$ với chiều cao $110$ mm và cạnh đáy bằng $120$ mm như hình vẽ bên. Chọn hệ trục tọa độ $Oxyz$ sao cho gốc tọa độ $O$ trùng với trung điểm của cạnh $BC$, đỉnh $B$ thuộc tia $Ox$ và đỉnh $A$ thuộc tia $Oy$ (đơn vị mỗi trục là mm, xem hình vẽ). Tia $Oz$ vuông góc mặt phẳng $(ABC)$ và hướng lên trời.",
-        image: "Toan/12/images/2612OnTNDe22/2612OnTNDe22DS4.png",
+        image: "images/2612OnTNDe22/2612OnTNDe22DS4.png",
         sub_questions: [
             { text: "a) Tọa độ các điểm $S\\left(0; 20\\sqrt{3}; 110\\right)$ và $A\\left(0; 60\\sqrt{3}; 0\\right)$", correct: true },
             { text: "b) Tọa độ các vector $\\overrightarrow{SB}=\\left(60; -20\\sqrt{3}; 110\\right)$ và $\\overrightarrow{AB}=\\left(60; -60\\sqrt{3}; 0\\right)$", correct: false },
@@ -112,7 +112,7 @@ window.quizData['on-tn-de-22-2612_p2'] = [
 window.quizData['on-tn-de-22-2612_p3'] = [
     {
         q: "Với một đĩa phẳng hình tròn bằng thép bán kính $R=10$ cm, người ta làm ra một cái phễu bằng cách cắt đi một hình quạt của đĩa này và gấp phần còn lại thành một hình nón. Gọi độ dài cung tròn của hình quạt còn lại là $x$. Tìm $x$ để thể tích khối nón tạo thành nhận giá trị lớn nhất (đơn vị cm, làm tròn đến hàng phần chục).",
-        image: "Toan/12/images/2612OnTNDe22/2612OnTNDe22TLN1.png",
+        image: "images/2612OnTNDe22/2612OnTNDe22TLN1.png",
         answer: "51{,}3"
     },
     {
@@ -121,7 +121,7 @@ window.quizData['on-tn-de-22-2612_p3'] = [
     },
     {
         q: "Từ một khối gỗ hình lập phương có cạnh bằng $5$ dm, người thợ mộc chỉ cần đến hai lát cắt là có thể tạo ra một khối gỗ có dạng hình chóp $S.ABCD$ với đáy $ABCD$ là hình vuông và $SA=AB=5$ dm. Người thợ cần tạo ra một vật để trang trí theo yêu cầu của khách hàng, anh đã chọn $M$ là trung điểm $SB$, $N$ thuộc cạnh $SD$ sao cho $SN=2ND$; sau đó anh ta tiếp tục thực hiện các lát cắt để có được vật thể hình tứ diện $ACMN$, thể tích vật thể sau cùng mà người thợ mộc làm ra là bao nhiêu dm$^3$ (làm tròn đến hàng phần chục)?",
-        image: "Toan/12/images/2612OnTNDe22/2612OnTNDe22TLN3.png",
+        image: "images/2612OnTNDe22/2612OnTNDe22TLN3.png",
         answer: "10{,}4"
     },
     {
