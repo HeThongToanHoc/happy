@@ -25,7 +25,7 @@ window.quizData['on-tn-de-21-2612_p1'] = [
     },
     {
         q: "Cho hình hộp $ABCD.A&#39;B&#39;C&#39;D&#39;$. Mệnh đề nào dưới đây đúng?",
-        image: "Toan/12/images/2612OnTNDe21/2612OnTNDe21TN5.png",
+        image: "images/2612OnTNDe21/2612OnTNDe21TN5.png",
         options: ["$\\overrightarrow{AB} + \\overrightarrow{AC} + \\overrightarrow{AA&#39;} = \\overrightarrow{AD}$", "$\\overrightarrow{AB} + \\overrightarrow{AD} + \\overrightarrow{AC&#39;} = \\overrightarrow{AC}$", "$\\overrightarrow{AB} + \\overrightarrow{AD} + \\overrightarrow{AA&#39;} = \\overrightarrow{AC&#39;}$.", "$\\overrightarrow{AB} + \\overrightarrow{AD} + \\overrightarrow{AC} = \\overrightarrow{AC&#39;}$"],
         answer: 2
     },
@@ -97,7 +97,7 @@ window.quizData['on-tn-de-21-2612_p2'] = [
     },
     {
         q: "Trong không gian ($Oxyz$) (đơn vị trên mỗi hệ trục tọa độ là mét), hệ thống truyền tin quang học gồm: Bộ phát laser tại $A(2;2;2)$. Gương phẳng $(P)$ ban đầu có phương trình $x+y+z=0$. Bộ thu tín hiệu ban đầu tại $B(1;4;-2)$. Tia laser phát từ $A$, chạm gương tại $M$ và phản xạ đi tiếp.",
-        image: "Toan/12/images/2612OnTNDe21/2612OnTNDe21DS4.png",
+        image: "images/2612OnTNDe21/2612OnTNDe21DS4.png",
         sub_questions: [
             { text: "a) Hai điểm $A$ và $B$ nằm về hai phía (khác nhau) đối với mặt phẳng gương $(P)$", correct: false },
             { text: "b) Khi bộ thu $B$ cố định tại $(1;4;-2)$ để tổng quãng đường truyền tin $(AM+MB)$ ngắn nhất điểm phản xạ phải là $M(0;2;-2)$", correct: true },
@@ -131,7 +131,7 @@ window.quizData['on-tn-de-21-2612_p3'] = [
     },
     {
         q: "Cho một khối hình được tạo ra bằng cách lấy phần giao nhau của $2$ hình sau:<br>- Hình lập phương $ABCD.EFGH$ có độ dài một cạnh bằng $2$.<br>- Hình nón cụt có đáy lớn là hình tròn tâm $H$ có bán kính bằng $2$ và nằm trên mặt phẳng $(EFGH)$; đáy nhỏ là hình tròn tâm $D$ có bán kính bằng $1$ và nằm trên mặt phẳng $(ABCD)$.<br>Giả sử có một chùm tia sáng song song, chiếu theo hướng vectơ $\\vec{u}$ có giá song song với $HM$, trong đó $M$ là trung điểm của $BF$. Diện tích phần bóng của khối hình này trên mặt phẳng $(EFGH)$ bằng bao nhiêu?",
-        image: "Toan/12/images/2612OnTNDe21/2612OnTNDe21TLN6.png",
+        image: "images/2612OnTNDe21/2612OnTNDe21TLN6.png",
         answer: "3.44"
     }
 ];
