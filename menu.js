@@ -594,6 +594,20 @@ const database = {
                             items: [
                                 { name: 'Làm đề thi trực tuyến (Cấu trúc 2025)', type: 'full_exam', testId: 'on-tn-de-20-2612', solutionLink: 'https://drive.google.com/open?id=1sfISn7kCIiNhnLTbP6Ex_49fD_Iz99OL&usp=drive_fs' }
                             ]
+                        },
+                        {
+                            name: 'Đề ôn thi số 21',
+                            type: 'group',
+                            items: [
+                                { name: 'Làm đề thi trực tuyến (Cấu trúc 2025)', type: 'full_exam', testId: 'on-tn-de-21-2612', solutionLink: 'https://drive.google.com/open?id=1QzhaJx3kvUotk8gLNQqqnwPMeGWmxLZg&usp=drive_fs' }
+                            ]
+                        },
+                        {
+                            name: 'Đề ôn thi số 22',
+                            type: 'group',
+                            items: [
+                                { name: 'Làm đề thi trực tuyến (Cấu trúc 2025)', type: 'full_exam', testId: 'on-tn-de-22-2612', solutionLink: 'https://drive.google.com/open?id=1aZqfx9Jv54taLhMcqoZL7JTUoqzKqAJ4&usp=drive_fs' }
+                            ]
                         }
                     ]
                 }
